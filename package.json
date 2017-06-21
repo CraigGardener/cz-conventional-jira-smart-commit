@@ -1,6 +1,6 @@
 {
   "name": "cz-conventional-jira-smart-commit",
-  "version": "0.0.0-semantically-released.0",
+  "version": "0.0.0-semantically-released",
   "description": "Commitizen adapter following the conventional-changelog format with add JIRA Smart Commit.",
   "main": "index.js",
   "scripts": {
