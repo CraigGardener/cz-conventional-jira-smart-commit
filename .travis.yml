@@ -1,0 +1,26 @@
+sudo: false
+language: node_js
+cache:
+  directories:
+  - node_modules
+notifications:
+  email: false
+node_js:
+- '4'
+before_install:
+- npm i -g npm@^2.0.0
+before_script:
+- npm prune
+after_success:
+- npm run semantic-release
+branches:
+  only:
+  - master
+deploy:
+  provider: npm
+  email: craig@craiggardener.me
+  api_key:
+    secure: hs5a3FQ7wzqVM///mP0zxoO6gbCfbVzdmTLEvXz4jPdFKKZuPTafzPQdrF/m0bKYnFmGW+xZif4m1o+syh2ejbGXGLTFXxI/Ap/v4a1M2Fl2adnjYqgSU/LDT+zBKo7dhGkpfNG5st6/WIR3vMbED2yDzA62SpAvGkz1ye0MPKMtBC12UE3FM8AAqhOIe9vVFdI1AndXX04icpce93ilFcmE6yQu2jLHus2yGNTq8ccEni2CPr1MMErwRy9rDZpW199WUyJLuXjQE+dktqbQjpjo6nv+wNXyfRrCVKZjf7uLGXbWUxUU2UH26LPJbL+BYRWOtRKdbBp1ubhoxluxnO7Ly+XVfzMNZo5IKt3Jyw5LQGiQVll/Hl0Dhf1q0p3nDjujfzPYVtzKbsDZuCcM42iaXwtz6kK+48ui7fIMAUcF/rQUa2gs3Ba4zyYZk4FHLH2muZbyYPBKRrEsTlrijGOtTiU19+GcvPrs2D1dXs5nImuoQ3b9mDnUvKuxl3cjxMllG+tzL9x/21TZLCVksNUx4dSwErW0SuN6bUvTmOW1JmG2Fv+LhVd0UdF6nI5KUSua7TceeKsdUvL9i8CdmiAmbJpFx9NiT8x/o+LKXiHAXGfAEHy0W31WW9urUZCLLwP0l3Hbr8Li+5XXFPDp8K0rktBScuvX+Kh7l8PWHbM=
+  on:
+    tags: true
+    repo: CraigGardener/cz-conventional-jira-smart-commit
